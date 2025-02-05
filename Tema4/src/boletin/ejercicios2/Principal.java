@@ -33,15 +33,15 @@ public class Principal {
 		edad = sc.nextInt();
 		sc.nextLine();
 		p2 = new Persona(nombre, apellidos, dni, edad);
-		if (p1.edad> 17) {
-			System.out.println(p1.nombre+" "+ p1.apellidos+"con DNI "+ p1.dni +" Es mayor de edad");
+		if (p1.getEdad()> 17) {
+			System.out.println(p1.getNombre()+" "+ p1.getApellidos()+"con DNI "+ p1.dni +" Es mayor de edad");
 		}else {
-			System.out.println(p1.nombre+" "+ p1.apellidos+"con DNI "+ p1.dni +" No es mayor de edad");
+			System.out.println(p1.getNombre()+" "+ p1.getApellidos()+"con DNI "+ p1.dni +" No es mayor de edad");
 		}
-		if (p2.edad> 17) {
-			System.out.println(p2.nombre+" "+ p2.apellidos+"con DNI "+ p2.dni +" Es mayor de edad");
+		if (p2.getEdad()> 17) {
+			System.out.println(p2.getNombre()+" "+ p2.getApellidos()+"con DNI "+ p2.dni +" Es mayor de edad");
 		}else {
-			System.out.println(p2.nombre+ " "+p2.apellidos+"con DNI "+ p2.dni +" No es mayor de edad");
+			System.out.println(p2.getNombre()+ " "+p2.getApellidos()+"con DNI "+ p2.dni +" No es mayor de edad");
 		}
 		sc.close();
 			

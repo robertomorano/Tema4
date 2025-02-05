@@ -6,7 +6,7 @@ public class Persona {
 	String apellidos;
 	int edad;
 	/**
-	 * 
+	 * construye una persona con sus atributos
 	 * @param nombre nombrepersona
 	 * @param apellidos apellidos persona 
 	 * @param dni dni persona
@@ -16,6 +16,48 @@ public class Persona {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
+		this.edad = edad;
+	}
+	/**
+	 * devuelve el valor nombre
+	 * @return el nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+	/**
+	 * Cambia el valor nombre
+	 * @param nombre cambia el nombre
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	/**
+	 * coge el apellido
+	 * @return apllidos de la persona
+	 */
+	public String getApellidos() {
+		return apellidos;
+	}
+	/**
+	 * apellido camabia
+	 * @param apellidos de la persona
+	 */
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	/**
+	 *  
+	 * @return edad de la persona
+	 */	
+	public int getEdad() {
+		return edad;
+	}
+	/**
+	 * Cambia el valor edad
+	 * @param edad de la persona
+	 */
+	public void setEdad(int edad) {
 		this.edad = edad;
 	}
 
