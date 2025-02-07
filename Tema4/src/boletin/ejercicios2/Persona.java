@@ -60,5 +60,36 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean esMayorEdad() {
+		boolean mas18= false;
+		if (this.edad >= 18) {
+			mas18 = true;
+		}
+		return mas18;
+	}
+	/**
+	 * 
+	 * @return jubilado 
+	 */
+	public boolean esJubilado() {
+		boolean jubilado= false;
+		if (this.edad >= 65) {
+			jubilado = true;
+		}	
+		return jubilado;
+	}
+	/**
+	 * 
+	 * @param p
+	 * @return
+	 */
+	public int diferenciaEdad(Persona p) {
+		int resta = 0;
+		resta = p.edad - this.edad;
+		return resta;
+	}
 }

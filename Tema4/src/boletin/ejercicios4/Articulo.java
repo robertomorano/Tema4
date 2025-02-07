@@ -1,10 +1,10 @@
 package boletin.ejercicios4;
 
 public class Articulo {
-	String nombre = "";
-	double precio = 0;
-	public static final double IVA = 21;
-	int stock = 0;
+	private String nombre = "";
+	private double precio = 0;
+	private static final double IVA = 21;
+	private int stock = 0;
 
 	/**
 	 * 
@@ -77,9 +77,47 @@ public class Articulo {
 		if (stock > 0) {
 			this.stock = stock;
 		}
-	public double getIVA() {
-		return this.IVA;
-		}
 	}
+	/**
+	 * 
+	 * @return
+	 */
+	public double getIVA() {
+		return IVA;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public double getPVP() {
+		double PVP = 0;
+		PVP = (this.precio + (this.precio * (IVA / 100)));
+		return PVP;
+	}
+	/**
+	 * 
+	 * @param descuento
+	 * @return
+	 */
+	public double getPVPDescuento(int descuento) {
+		double PVPDesc = this.getPVP();
+		PVPDesc = PVPDesc* (descuento/100);
+		return PVPDesc;
+	}
+	/**
+	 * 
+	 * @param x
+	 * @return
+	 */
+	
+	public boolean vender(int x) {
+		boolean venta = false;
+		if(this.stock>x) {
+			venta = true;
+			this.setStock(this.stock-x);
+		}
+		return venta;
+	}
+	
 
 }

@@ -1,10 +1,10 @@
 package boletin.ejercicios3;
 
 public class Recatangulo {
-	int x1 = 0;
-	int y1 = 0;
-	int x2 = 0;
-	int y2 = 0;
+	private int x1 = 0;
+	private int y1 = 0;
+	private int x2 = 0;
+	private int y2 = 0;
 
 	/**
 	 * 
@@ -14,18 +14,13 @@ public class Recatangulo {
 	 * @param y2 y segundo punto
 	 */
 	public Recatangulo(int x1, int y1, int x2, int y2) {
-		if (x1 > 0) {
+		if ((x1 < x2) && (y1 < y2)){
 			this.x1 = x1;
-		}
-		if (y1 > 0) {
-			this.y1 = y1;
-		}
-		if (x2 > 0) {
 			this.x2 = x2;
-		}
-		if (y2 > 0) {
+			this.y1 = y1;
 			this.y2 = y2;
 		}
+	
 	}
 
 	/**
@@ -99,5 +94,37 @@ public class Recatangulo {
 			this.y2 = y2;
 		}
 	}
-
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 */
+	public void setX1Y1(int x, int y) {
+		this.x1 = x;
+		this.y1 = y;
+	}
+	public void setX2Y2(int x, int y) {
+		this.x2 = x;
+		this.y2 = y;
+	}
+	public void setAll(int x1, int y1, int x2, int y2) {
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getArea() {
+		return (this.x2 - this.x1) * (this.y2 - this.y1) ;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getPerimetro() {
+		return ((this.x2 - this.x1) + (this.y2 - this.y1));
+	}
 }
