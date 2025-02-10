@@ -25,14 +25,14 @@ public class Recatangulo {
 
 	/**
 	 * 
-	 * @return
+	 * @return x1
 	 */
 	public int getX1() {
 		return x1;
 	}
 
 	/**
-	 * 
+	 * setter
 	 * @param x1
 	 */
 	public void setX1(int x1) {
@@ -43,7 +43,7 @@ public class Recatangulo {
 
 	/**
 	 * 
-	 * @return
+	 * @return y1
 	 */
 	public int getY1() {
 		return y1;
@@ -61,7 +61,7 @@ public class Recatangulo {
 
 	/**
 	 * 
-	 * @return
+	 * @return x2
 	 */
 	public int getX2() {
 		return x2;
@@ -69,7 +69,7 @@ public class Recatangulo {
 
 	/**
 	 * 
-	 * @param x2
+	 * @param x2 
 	 */
 	public void setX2(int x2) {
 		if (x2 > 0) {
@@ -79,7 +79,7 @@ public class Recatangulo {
 
 	/**
 	 * 
-	 * @return
+	 * @return y2
 	 */
 	public int getY2() {
 		return y2;
@@ -103,10 +103,22 @@ public class Recatangulo {
 		this.x1 = x;
 		this.y1 = y;
 	}
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	public void setX2Y2(int x, int y) {
 		this.x2 = x;
 		this.y2 = y;
 	}
+	/**
+	 * 
+	 * @param x1
+	 * @param y1
+	 * @param x2
+	 * @param y2
+	 */
 	public void setAll(int x1, int y1, int x2, int y2) {
 		this.x1 = x1;
 		this.y1 = y1;
@@ -115,14 +127,14 @@ public class Recatangulo {
 	}
 	/**
 	 * 
-	 * @return
+	 * @return el area del rectangulo dado
 	 */
 	public int getArea() {
 		return (this.x2 - this.x1) * (this.y2 - this.y1) ;
 	}
 	/**
 	 * 
-	 * @return
+	 * @return el perimetro del rectangulo dado
 	 */
 	public int getPerimetro() {
 		return ((this.x2 - this.x1) + (this.y2 - this.y1));
