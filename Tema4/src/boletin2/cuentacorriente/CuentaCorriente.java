@@ -90,5 +90,17 @@ public class CuentaCorriente {
 		texto = "La cuenta con DNI: "+this.DNI+" de nombre "+this.nombre+" saldo: "+this.saldo;
 		return texto;
 	}
+	/**
+	 * 
+	 */
+	public boolean equals(CuentaCorriente otra) {
+		boolean iguales = false;
+		if (this.toString().equals(otra.toString())) {
+			iguales = true;
+		}
+		return iguales;
+	}
+	
+	
 	
 }
