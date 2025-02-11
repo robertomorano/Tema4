@@ -1,14 +1,17 @@
 package boletin2.cuentacorriente;
 
+import java.util.Objects;
+
 public class CuentaCorriente {
+	enum Nacionalidad {
+		ESPAÑA, EXTRANJERO
+	}
 	private String DNI = "";
 	private String nombre = "";
 	private double saldo = 0;
 	private Nacionalidad nacionalidad;
 
-	enum Nacionalidad {
-		ESPAÑA, EXTRANJERO
-	}
+
 
 	public CuentaCorriente(String dNI, String nombre, double saldo, Nacionalidad nacionalidad) {
 		super();
@@ -87,18 +90,26 @@ public class CuentaCorriente {
 	}
 	public String toString() {
 		String texto="";
-		texto = "La cuenta con DNI: "+this.DNI+" de nombre "+this.nombre+" saldo: "+this.saldo;
+		texto = "DNI: "+this.DNI+" \n"
+				+ "Nombre: "+this.nombre+" \n"
+						+ "Saldo: "+this.saldo;
 		return texto;
 	}
 	/**
 	 * 
 	 */
-	public boolean equals(CuentaCorriente otra) {
-		boolean iguales = false;
-		if (this.toString().equals(otra.toString())) {
-			iguales = true;
+	@Override
+	public boolean equals(Object obj) {
+		boolean equal = false;
+		CuentaCorriente cuenta = (CuentaCorriente) obj;
+		if (this.DNI.equals(cuenta.DNI) && this.nombre.equals(cuenta.nombre)) {
+			equal = true;
 		}
-		return iguales;
+		return equal;
+	}
+	 @Override
+	public int hashCode() {
+		return Objects.hash( DNI, nombre);
 	}
 	
 	
