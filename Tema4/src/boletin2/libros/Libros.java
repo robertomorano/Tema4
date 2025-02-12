@@ -1,10 +1,8 @@
 package boletin2.libros;
 
-import boletin2.cuentacorriente.CuentaCorriente;
-
 public class Libros {
 	enum Genero {
-		Narrativo, Lírico, Dramático, Didáctico, Poético
+		NARRATIVO, LÍRICO, DRÁMATICO, DIDACTCO, POÉTICO
 	}
 
 	private String titulo;
