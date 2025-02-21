@@ -21,10 +21,10 @@ public class FuncionesMatematicas {
 		int serie = 0;
 		if (numero == 0 || numero == 1) {
 			serie += 1;
-		}else {
-			serie += numero; 
-			serie += serieFibonacci(serie-1);
+		}else { 
+			serie = serieFibonacci(numero-1) + serieFibonacci(numero-2);
 		}
+		System.out.println(serie);
 		System.out.println(serie +" + " +numero);
 		return serie;
 	}
