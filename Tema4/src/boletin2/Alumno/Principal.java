@@ -41,6 +41,7 @@ public class Principal {
 		notamedia =pedirNota();
 		
 		Alumno nuevo = new Alumno(nombre, notamedia);
+		return nuevo;
 	}
 	/**
 	 * @return
