@@ -63,7 +63,11 @@ public class Principal {
 	}
 
 	private static void modificar(String nombr) {
-
+		Alumno cambio = null;
+		double nuevaNota = pedirNota();
+		if (db.existe(nombr)) {
+			cambio = db.get(nombr);
+		}
 	}
 
 }

@@ -28,6 +28,19 @@ public class AlumnoCRUD {
 		
 		return exito;
 	}
-	
+	public boolean existe(String nombre) {
+		boolean exito = false;
+		
+		if(!Alumnos.contains(nombre)) {
+			exito = true;
+		}
+		
+		return exito;
+	}
+	public boolean cambiarNota(String nombre, double nuevaNota) {
+		if(existe(nombre)) {
+			Alumnos.
+		}
+	}
 
 }
