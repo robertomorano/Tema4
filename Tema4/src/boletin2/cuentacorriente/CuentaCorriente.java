@@ -9,7 +9,7 @@ public class CuentaCorriente {
 	private String DNI = "";
 	private String nombre = "";
 	private double saldo = 0;
-	private Nacionalidad nacionalidad;
+	private Nacionalidad nacionalidad = Nacionalidad.ESPAÑA;
 
 
 
@@ -32,6 +32,11 @@ public class CuentaCorriente {
 		super();
 		DNI = dNI;
 		this.saldo = saldo;
+	}
+	public CuentaCorriente(String dNI, String nombre) {
+		super();
+		DNI = dNI;
+		this.nombre = nombre;
 	}
 
 	public String getDNI() {
@@ -84,7 +89,7 @@ public class CuentaCorriente {
 		boolean exito = false;
 		if (importe > 0) {
 			exito = true;
-			this.saldo -= importe;
+			this.saldo += importe;
 		}
 		return exito;
 	}

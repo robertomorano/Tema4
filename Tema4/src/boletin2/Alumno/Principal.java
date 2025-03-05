@@ -7,31 +7,33 @@ public class Principal {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
+		menu();
 	}
 
 	static void menu() {
 
 		int key = 0;
-		System.out.println("1. Listado.\r\n" + "2. Nuevo Alumno.\r\n" + "3. Modificar.\r\n" + "4. Borrar.\r\n"
-				+ "5. Salir.\r\n" + "");
-		key = sc.nextInt();
-		switch (key) {
-		case 1 -> {
-			db.listado();
-		}
-		case 2 -> {
-			Alumno nuevo = creaAlumno();
-			if (db.añadir(nuevo)) {
-				System.out.println("Añadido con ");
+		do {
+			System.out.println("1. Listado.\r\n" + "2. Nuevo Alumno.\r\n" + "3. Modificar.\r\n" + "4. Borrar.\r\n"
+					+ "5. Salir.\r\n" + "");
+			key = sc.nextInt();
+			switch (key) {
+			case 1 -> {
+				db.listado();
 			}
-		}
-		case 3 -> {
-			String nombre = pedirNombre();
-			modificar(nombre);
-		}
-		default -> throw new IllegalArgumentException("Unexpected value: " + key);
-		}
+			case 2 -> {
+				Alumno nuevo = creaAlumno();
+				if (db.añadir(nuevo)) {
+					System.out.println("Añadido con ");
+				}
+			}
+			case 3 -> {
+				String nombre = pedirNombre();
+				modificar(nombre);
+			}
+			default -> throw new IllegalArgumentException("Unexpected value: " + key);
+			}
+		} while (key != 0);
 	}
 
 	static Alumno creaAlumno() {
@@ -63,11 +65,14 @@ public class Principal {
 	}
 
 	private static void modificar(String nombr) {
-		Alumno cambio = null;
 		double nuevaNota = pedirNota();
-		if (db.existe(nombr)) {
-			cambio = db.get(nombr);
+		Alumno cambio = db.cambiarNota(nombr, nuevaNota) ;
+		
+		if(cambio != null) {
+			db.eliminar(nombr);
+			db.añadir(cambio)
 		}
+
 	}
 
 }
