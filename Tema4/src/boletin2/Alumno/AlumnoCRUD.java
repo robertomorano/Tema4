@@ -9,7 +9,7 @@ public class AlumnoCRUD {
 	 */
 	void listado() {
 		for(Alumno alumno: Alumnos) {
-			System.out.println(alumno);
+			System.out.println(alumno.toString());
 			System.out.println("--------------------");
 		}
 	}
@@ -28,6 +28,8 @@ public class AlumnoCRUD {
 		
 		return exito;
 	}
+	
+	
 	public boolean existe(String nombre) {
 		boolean exito = false;
 		
@@ -37,10 +39,40 @@ public class AlumnoCRUD {
 		
 		return exito;
 	}
-	public boolean cambiarNota(String nombre, double nuevaNota) {
-		if(existe(nombre)) {
-			Alumnos.
+	
+	
+	public Alumno cambiarNota(String nombre, double nuevaNota) {
+		
+		Alumno alumnoNotaNueva = getAlumno(nombre);
+		
+		if( alumnoNotaNueva != null) {
+			alumnoNotaNueva.setNotaMedia(nuevaNota);
+			
 		}
+		return alumnoNotaNueva;
+	}
+	
+	public Alumno getAlumno(String nombre) {
+		Alumno encontrada = null;
+		Alumno comparar = new Alumno(nombre, 0);
+		for (Alumno alumno: Alumnos) {
+			if (alumno.equals(comparar)) {
+				encontrada = alumno;
+			}
+		}
+		
+		return encontrada;
+	}
+	public boolean eliminar(String nombre) {
+		Alumno eliminarAlumno = getAlumno(nombre);
+		boolean eliminado = false;
+		if (eliminarAlumno != null){
+			Alumnos.remove(eliminarAlumno);
+			eliminado = true;
+		}
+		return eliminado;
+		
+
 	}
 
 }
