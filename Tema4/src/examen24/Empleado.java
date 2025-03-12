@@ -58,12 +58,27 @@ public class Empleado {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	/**
+	 * 
+	 * @param sueldoBase
+	 */
 	public void setSueldoBase(int sueldoBase) {
 		this.sueldoBase = sueldoBase;
 	}
+	/**
+	 * 
+	 * @param horasExtra
+	 */
 	public void setHorasExtra(int horasExtra) {
 		this.horasExtra = horasExtra;
 	}
+	/**
+	 * 
+	 * @param dni
+	 * @param nombre
+	 * @param sueldoBase
+	 * @param horasExtra
+	 */
 	public Empleado(String dni, String nombre, int sueldoBase, int horasExtra) {
 		if (!dni.isEmpty() || dni != null) {
 			this.dni = dni;
@@ -79,7 +94,43 @@ public class Empleado {
 		}
 		
 	}
+	Empleado(String dni){
+		if (!dni.isEmpty() || dni != null) {
+			this.dni = dni;
+		}
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int calcularComplemento() {
+		return this.horasExtra * IMPORTEHORASEXTRA;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int sueldoBruto() {
+		return calcularComplemento()+this.sueldoBase;
+	}
+	/**
+	 * 
+	 */
+	@Override
+	public String toString() {
+		return this.dni+" "+this.nombre+"\n"+"Horas Extra: "+ this.horasExtra +"\n Sueldo Bruto: "+ this.sueldoBruto();
+	}
 	
-	
-	
+	/** 	
+	 * 
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		boolean equal = false;
+		Empleado comparar = (Empleado) obj;
+		if (comparar.dni.equals(this.dni)) {
+			equal = true;
+		}
+		return equal;
+	}
 }
