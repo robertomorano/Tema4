@@ -22,7 +22,7 @@ public class Empleado {
 	/**
 	 * valor fijo que valen las horas extra
 	 */
-	final static private int IMPORTEHORASEXTRA = 0;
+	static private int importeHorasExtra = 0;
 	/**
 	 * devuelve el dni
 	 * @return el dni de la persona
@@ -72,6 +72,9 @@ public class Empleado {
 	public void setHorasExtra(int horasExtra) {
 		this.horasExtra = horasExtra;
 	}
+	public static void setImporteHora(int importeHorasExtra) {
+		Empleado.importeHorasExtra = importeHorasExtra;
+	}
 	/**
 	 * 
 	 * @param dni
@@ -104,7 +107,7 @@ public class Empleado {
 	 * @return
 	 */
 	public int calcularComplemento() {
-		return this.horasExtra * IMPORTEHORASEXTRA;
+		return this.horasExtra * importeHorasExtra;
 	}
 	/**
 	 * 

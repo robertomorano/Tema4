@@ -13,6 +13,7 @@ public class ListadoEmpleado {
 			System.out.println(emp);
 		}
 	}
+	
 	public static boolean modificaHora(String dni, int nuevoHoras) {
 		boolean exito = false;
 		Empleado comparar = new Empleado(dni);
@@ -24,5 +25,20 @@ public class ListadoEmpleado {
 		}
 		return exito;
 	}
-	
+	public static void modificaImporte(int nuevoImporte) {
+		//boolean exito=false;
+		
+		//return exito;
+	}
+	public static boolean eliminar(String dni) {
+		boolean exito = false;
+		Empleado comparar = new Empleado(dni);
+		int indice = listaEmpleados.indexOf(comparar);
+		if (indice >= 0) {
+			listaEmpleados.remove(indice);
+			
+			exito = true;
+		}
+		return exito;
+	}
 }

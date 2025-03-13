@@ -32,8 +32,8 @@ public class AlumnoCRUD {
 	
 	public boolean existe(String nombre) {
 		boolean exito = false;
-		
-		if(!Alumnos.contains(nombre)) {
+		Alumno alum = new Alumno(nombre, 0);
+		if(!Alumnos.contains(alum)) {
 			exito = true;
 		}
 		

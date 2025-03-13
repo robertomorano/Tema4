@@ -33,4 +33,5 @@ public class Alumno {
 		// TODO Auto-generated method stub
 		return this.nombre+" Nota Media"+ this.notaMedia;
 	}
+	
 }

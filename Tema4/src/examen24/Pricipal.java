@@ -31,14 +31,29 @@ public class Pricipal {
 			}
 			case 3 ->{
 				System.out.println("De que empleado quieres modificar");
-				dni = sc.next();
-				emp = ListadoEmpleado.existe(dni) 
-				if( emp != null) {
-					
+				dni = pedirDni();
+				System.out.println("Damen la hora para modificar");
+				horasExtra = pedirHoras();
+			
+				if(ListadoEmpleado.modificaHora(dni, horasExtra)) {
+					System.out.println("Bien modificado");
+				}else {
+					System.out.println("no existe ");
+				}
+			}
+			case 4 ->{
+				System.out.println("Nuevo el importe");
+				importeHoras = sc.nextInt();
+				Empleado.setImporteHora(importeHoras);
+			}
+			case 5 ->{
+				dni = pedirDni();
+				if(ListadoEmpleado.eliminar(dni)) {
+					System.out.println("Eliminado");
 				}
 			}
 			default ->{
-				
+				System.out.println("Saliendo del sistema");
 			}
 			}
 		}while(opcion != 0);
